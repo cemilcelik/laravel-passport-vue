@@ -10,6 +10,10 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
+        <link rel="stylesheet" href="css/app.css" type="text/css">
+
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <!-- Styles -->
         <style>
             html, body {
@@ -63,6 +67,12 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        <script>
+            window.Laravel = <?php echo json_encode([
+                'csrfToken' => csrf_token(),
+            ]); ?>
+        </script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -91,5 +101,8 @@
                 </div>
             </div>
         </div>
+
+        <script src="js/app.js" type="text/javascript"></script>
+
     </body>
 </html>
