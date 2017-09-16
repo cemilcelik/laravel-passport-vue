@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Todo;
 
-class DatabaseSeeder extends Seeder
+class TodosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersTableSeeder::class);
-        $this->call(TodosTableSeeder::class);
+        factory(Todo::class, 10)->create(['user_id' => 1]);
     }
 }
